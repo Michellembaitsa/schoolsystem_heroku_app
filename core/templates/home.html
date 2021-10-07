@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Luckiest+Guy&family=Merienda:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+    <title>AkiraChix.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url("https://miro.medium.com/max/1838/1*dIXJZdx-BAkU13P0qoUjuw.jpeg");
+            font-weight: 500;
+            font-size: 1.05em;
+            font-family: 'Merienda', cursive;
+            height: 700px;
+        }
+        
+        .container {
+            color: white;
+            left: 34%;
+            position: relative;
+            top: 20%;
+            margin-left: -355px;
+            margin-top: -2.5em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            padding: 200px;
+            width: 3500px;
+            height: 500px;
+            border-style: none;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+        }
+        
+        .home {
+            /* overflow: hidden; */
+            background-color: white;
+            position: fixed;
+            height: 10%;
+            top: 0;
+            width: 100%;
+        }
+        
+        .home a {
+            float: right;
+            margin-right: 2%;
+            color: #7b20bd;
+            padding: 10px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .home a:hover {
+            color: black;
+        }
+        
+        .hh {
+            margin-top: 10%;
+            text-align: center;
+            color: rgb(14, 12, 12);
+        }
+        
+        .img {
+            margin-top: 2%;
+        }
+        
+        .right-side {
+            margin-left: 50px;
+            background: rgb(19, 18, 18);
+            padding: 18px 14px;
+            box-shadow: 2px 2px 5px rgb(46, 11, 59);
+            color: #7b20bd;
+        }
+        
+        .stuff {
+            position: absolute;
+            width: 35%;
+            margin-bottom: auto;
+        }
+        
+        #formbody {
+            display: flex;
+            width: 95%;
+            height: 95%;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center center;
+            position: absolute;
+            margin-left: 3.5%;
+            border-radius: 20px;
+        }
+    </style>
+
+    <nav class="home">
+        <a href="{% url 'student_list' %}">Students</a>
+        <a href="{% url 'trainer_list' %}">Trainers</a>
+        <a href="{% url 'register_calendars' %}">Events</a>
+    </nav>
+    <div class="container">
+
+        <img class="img" src="https://akirachix.com/img/logo.png?_cchid=1660c557f83aa4644e2a8d4bf0ddd4fb">
+        <h1 class="hh">“First, solve the problem. Then, write the code.” <br> ~John Johnson </h1>
+        <div>
+            <div class="stuff">
+                <h1><a id="link" href="{% url 'student_list' %}"> {{ students }} codeHive Students </a></h1>
+                <h1><a id="link" href="{% url 'trainer_list' %}">{{ trainers }} codeHive Trainers</a></h1>
+                <h1><a id="link" href="{% url 'courses_list' %}">{{ courses }} codeHive Courses</a></h1>
+                <h1><a id="link" href="{% url 'calendar' %}">{{ events }} codeHive Events</a></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

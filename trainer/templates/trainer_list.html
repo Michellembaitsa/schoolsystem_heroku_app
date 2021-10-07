@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <title>Trainers</title>
+</head>
+
+<body background="https://images.unsplash.com/photo-1612831198717-1e71a0d5e2ad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nj">
+    <h1>codeHive Trainers List</h1>
+    <div class="clearfix">
+        <a class="btn info" href="{% url 'register_trainer' %}"> Add Trainer </a>
+        <input type="name" name="search" id="search" placeholder="Search..." />
+    </div>
+    <table>
+        <tr>
+            <th id="row">First Name</th>
+            <th id="row">Last Name</th>
+            <th id="row">Gender</th>
+            <th id="row">Trainer Image</th>
+            <th id="row">Course Name</th>
+            <th id="row">Proffession</th>
+            <th id="row">Email</th>
+            {% for trainer in trainers %}
+            <tr>
+                <td id="start-column">{{trainer.first_name}}</td>
+                <td>{{trainer.last_name}}</td>
+                <td>{{trainer.gender}}</td>
+                <td class="img"><img src="{{trainer.trainer_image.url}}"></td>
+                <td>{{trainer.course_name}}</td>
+                <td>{{trainer.proffession}}</td>
+                <td>{{trainer.email}}</td>
+
+            </tr>
+            {%endfor%}
+        </tr>
+
+
+    </table>
+    <style>
+        * {
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #260818;
+        }
+        
+        table {
+            text-align: center;
+            font-size: 20px;
+            width: 85%;
+            margin: auto;
+            margin-top: 40px;
+        }
+        
+        table tr :nth-child(odd) {
+            background: #c0aec4;
+        }
+        
+        table tr :nth-child(even) {
+            background: #dae5f4;
+        }
+        
+        th,
+        td {
+            padding: 8px;
+            opacity: 0.9;
+        }
+        
+        #row {
+            background-color: #260818;
+            color: #a0ded3;
+        }
+        
+        th {
+            background-color: #a0ded3;
+        }
+        
+        img {
+            height: 50px;
+            width: 50px;
+        }
+        
+        .clearfix {
+            margin-left: 850px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background-color: #260818;
+            color: #dae5f4;
+            border-radius: 8px;
+            padding: 10px;
+            align-items: center;
+            width: 350px;
+            margin-right: 60px;
+            border: 3px solid #C200A8;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #search {
+            margin-top: -30px;
+            padding: 10px;
+            font-family: 'Nunito';
+            border: 3px solid #C200A8;
+            background: #FAF5F9;
+            line-height: 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 130px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        #search:hover {
+            width: 30%;
+            background: rgb(241, 210, 241);
+        }
+        
+        #search:focus {
+            width: 30%;
+            background: rgb(241, 210, 241);
+        }
+    </style>
+</body>
+
+</html>
+
+</html>
