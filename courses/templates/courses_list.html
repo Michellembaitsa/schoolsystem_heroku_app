@@ -11,6 +11,10 @@
 
 <body background="https://images.unsplash.com/photo-1612831198717-1e71a0d5e2ad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nj">
     <h1>codeHive Courses</h1>
+    <div class="clearfix">
+        <a class="btn info" href="{% url 'register_trainer' %}"> Add Trainer </a>
+        <input type="name" name="search" id="search" placeholder="Search..." />
+    </div>
     <table>
         <tr>
             <th id="row">Course Name</th>
@@ -76,6 +80,50 @@
         
         th {
             background-color: #a0ded3;
+        }
+        
+        .clearfix {
+            margin-left: 850px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background-color: #260818;
+            color: #dae5f4;
+            border-radius: 8px;
+            padding: 10px;
+            align-items: center;
+            width: 350px;
+            margin-right: 60px;
+            border: 3px solid #C200A8;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        #search {
+            margin-top: -30px;
+            padding: 10px;
+            font-family: 'Nunito';
+            border: 3px solid #C200A8;
+            background: #FAF5F9;
+            line-height: 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 130px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        #search:hover {
+            width: 30%;
+            background: rgb(241, 210, 241);
+        }
+        
+        #search:focus {
+            width: 30%;
+            background: rgb(241, 210, 241);
         }
     </style>
 </body>
