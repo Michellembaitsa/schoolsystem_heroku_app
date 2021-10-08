@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'embed_video',
     'event',
+    'whitenoise.runserver_nostatic'
+
 
 
 ]
