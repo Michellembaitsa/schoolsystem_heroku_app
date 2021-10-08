@@ -18,14 +18,15 @@
     <table>
         <tr>
             <th id="row">First Name</th>
-            <th id="row">Trainer Image</th>
             <th id="row">Last Name</th>
+            <th id="row">Trainer Image</th>
             <th id="row">Gender</th>
             <th id="row">Course Name</th>
             <th id="row">Proffession</th>
             <th id="row">Email</th>
-            {% for trainer in trainers %}
             <tr>
+                {% for trainer in trainers %}
+
                 <td id="start-column">{{trainer.first_name}}</td>
                 {%if trainer.trainer_image%}
                 <td>
