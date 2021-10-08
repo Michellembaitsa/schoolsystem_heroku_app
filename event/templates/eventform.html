@@ -18,7 +18,9 @@
 
 <body>
     {% block content %}
-
+    <div class="clearfix">
+        <a class="btn info" href="{% url 'calendar' %}"> See Our Upcoming Events</a>
+    </div>
     <div class="wrapper">
         <div class="form">
             <form method="POST " enctype="multipart/form-data ">
@@ -101,6 +103,27 @@
             text-align: center;
             height: 150px;
             border-radius: 1%;
+        }
+        
+        .clearfix {
+            margin-right: 700px;
+            margin-top: 50px;
+        }
+        
+        .btn {
+            background-color: white;
+            color: #C200A8;
+            border-radius: 8px;
+            padding: 10px;
+            align-items: center;
+            width: 350px;
+            margin-right: 100px;
+            border: 3px solid #C200A8;
+            margin-top: 50%;
+        }
+        
+        a {
+            text-decoration: none;
         }
     </style>
     {% endblock content %}

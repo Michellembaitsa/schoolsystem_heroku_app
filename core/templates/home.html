@@ -16,7 +16,7 @@
     <style>
         body {
             background-image: url("https://miro.medium.com/max/1838/1*dIXJZdx-BAkU13P0qoUjuw.jpeg");
-            font-weight: 500;
+            background-repeat: no-repeat;
             font-size: 1.05em;
             font-family: 'Merienda', cursive;
             height: 700px;
@@ -24,17 +24,16 @@
         
         .container {
             color: white;
-            left: 34%;
-            position: relative;
+            position: absolute;
+            left: 100px;
             top: 20%;
-            margin-left: -355px;
-            margin-top: -2.5em;
+            margin-right: 1000px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-content: center;
             padding: 200px;
-            width: 3500px;
+            width: 3000px;
             height: 500px;
             border-style: none;
             background: rgba(255, 255, 255, 0.05);
@@ -46,10 +45,9 @@
         }
         
         .home {
-            /* overflow: hidden; */
             background-color: white;
             position: fixed;
-            height: 8%;
+            height: 9%;
             top: 0;
             width: 100%;
         }
@@ -76,6 +74,7 @@
         
         .img {
             margin-top: 2%;
+            background-repeat: no-repeat;
         }
         
         .right-side {
@@ -87,9 +86,10 @@
         }
         
         .stuff {
-            position: absolute;
-            width: 35%;
+            width: 120%;
             margin-bottom: auto;
+            display: flex;
+            justify-content: space-around;
         }
         
         #formbody {
@@ -105,51 +105,39 @@
         }
         
         #link {
-            margin-bottom: 100px;
-            padding: 10px;
             background-color: rgb(15, 1, 1);
-            color: rgb(104, 2, 104);
+            color: white;
             height: 40px;
-            width: 300px;
+            width: 40px;
             border-radius: 10px;
-            margin-left: 20%;
-            margin-bottom: 150px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             text-decoration: none;
         }
     </style>
+    <div>
+        <nav class="home">
+            <img class="img" src="https://akirachix.com/img/logo.png?_cchid=1660c557f83aa4644e2a8d4bf0ddd4fb">
+            <a href="{% url 'eventform' %}">Events</a>
+            <a href="{% url 'register_courses' %}">Courses</a>
+            <a href="{% url 'register_trainer' %}">Trainers</a>
+            <a href="{% url 'register_student' %}">Students</a>
+        </nav>
+    </div>
+    <section>
+        <div class="container">
 
-    <nav class="home">
-        <a href="{% url 'register_courses' %}">Courses</a>
-        <a href="{% url 'register_trainer' %}">Trainers</a>
-        <a href="{% url 'register_student' %}">Students</a>
-        <a href="{% url 'eventform' %}">Event</a>
-
-
-
-
-
-    </nav>
-    <div class="container">
-
-        <img class="img" src="https://akirachix.com/img/logo.png?_cchid=1660c557f83aa4644e2a8d4bf0ddd4fb">
-        <h1 class="hh">“First, solve the problem. Then, write the code.” <br> ~John Johnson </h1>
-        <div>
-            <div class="stuff">
-                <h1><a id="link" href="{% url 'student_list' %}"> {{ students }} codeHive Students </a></h1>
-                <h1><a id="link" href="{% url 'trainer_list' %}">{{ trainers }} codeHive Trainers</a></h1>
-                <h1><a id="link" href="{% url 'courses_list' %}">{{ courses }} codeHive Courses</a></h1>
-                <h1><a id="link" href="{% url 'calendar' %}">{{ events }} codeHive Events</a></h1>
-
-
-
+            <h1 class="hh">“First, solve the problem. Then, write the code.” <br> ~John Johnson </h1>
+            <div>
+                <div class="stuff">
+                    <h1><a id="link" href="{% url 'student_list' %}"> {{ students }} codeHive Students </a></h1>
+                    <h1><a id="link" href="{% url 'trainer_list' %}">{{ trainers }} codeHive Trainers</a></h1>
+                    <h1><a id="link" href="{% url 'courses_list' %}">{{ courses }} codeHive Courses</a></h1>
+                    <h1><a id="link" href="{% url 'calendar' %}">{{ events }} codeHive Events</a></h1>
+                </div>
             </div>
         </div>
-    </div>
-
-
-
+    </section>
 
 
 </body>
