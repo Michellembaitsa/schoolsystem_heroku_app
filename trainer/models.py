@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Trainer(models.Model):
-    trainer_image=models.ImageField(null=True,blank=True,upload_to="images/")
+    trainer_image=models.ImageField(upload_to="images/",null=True,blank=True)
     first_name=models.CharField(max_length=10,null=True)
     last_name=models.CharField(max_length=10,null=True)
     course_name=models.CharField(max_length=30,null=True)
