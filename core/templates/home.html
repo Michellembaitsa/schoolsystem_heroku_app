@@ -49,7 +49,7 @@
             /* overflow: hidden; */
             background-color: white;
             position: fixed;
-            height: 10%;
+            height: 8%;
             top: 0;
             width: 100%;
         }
@@ -58,7 +58,7 @@
             float: right;
             margin-right: 2%;
             color: #7b20bd;
-            padding: 10px 16px;
+            padding: 10px 7px;
             text-decoration: none;
             font-size: 25px;
             font-family: 'Raleway', sans-serif;
@@ -121,9 +121,14 @@
     </style>
 
     <nav class="home">
-        <a href="{% url 'student_list' %}">Students</a>
-        <a href="{% url 'trainer_list' %}">Trainers</a>
-        <a href="{% url 'courses_list' %}">Courses</a>
+        <a href="{% url 'register_courses' %}">Courses</a>
+        <a href="{% url 'register_trainer' %}">Trainers</a>
+        <a href="{% url 'register_student' %}">Students</a>
+        <a href="{% url 'eventform' %}">Event</a>
+
+
+
+
 
     </nav>
     <div class="container">
@@ -135,6 +140,10 @@
                 <h1><a id="link" href="{% url 'student_list' %}"> {{ students }} codeHive Students </a></h1>
                 <h1><a id="link" href="{% url 'trainer_list' %}">{{ trainers }} codeHive Trainers</a></h1>
                 <h1><a id="link" href="{% url 'courses_list' %}">{{ courses }} codeHive Courses</a></h1>
+                <h1><a id="link" href="{% url 'calendar' %}">{{ events }} codeHive Events</a></h1>
+
+
+
             </div>
         </div>
     </div>
