@@ -18,6 +18,7 @@
     <table>
         <tr>
             <th id="row">First Name</th>
+            <th id="row">Trainer Image</th>
             <th id="row">Last Name</th>
             <th id="row">Gender</th>
             <th id="row">Course Name</th>
@@ -26,6 +27,14 @@
             {% for trainer in trainers %}
             <tr>
                 <td id="start-column">{{trainer.first_name}}</td>
+                {%if trainer.trainer_image%}
+                <td>
+                    <img src="{{trainer.trainer_image.url}}"></td>
+                {%else%}
+                <td>
+                    None
+                </td>
+                {%endif%}
                 <td>{{trainer.last_name}}</td>
                 <td>{{trainer.gender}}</td>
                 <td>{{trainer.course_name}}</td>

@@ -31,7 +31,13 @@
         {% for student in students %}
 
         <td id="start-column">{{student.registration_number}}</td>
+        {%if student.student_image%}
         <td class="img"><img src="{{student.student_image.url}}"></td>
+        {%else%}
+        <td>
+            None
+        </td>
+        {%endif%}
 
         <td>{{student.first_name}}</td>
         <td>{{student.last_name}}</td>

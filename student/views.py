@@ -7,7 +7,7 @@ from .forms import StudentRegistrationForm
 # Create your views here.
 def register_student(request):
     if request.method=="POST":
-        form=StudentRegistrationForm(request.POST)
+        form=StudentRegistrationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
     else:
