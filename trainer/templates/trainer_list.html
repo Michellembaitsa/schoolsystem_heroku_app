@@ -28,6 +28,8 @@
                 {% for trainer in trainers %}
 
                 <td id="start-column">{{trainer.first_name}}</td>
+                <td>{{trainer.last_name}}</td>
+
                 {%if trainer.trainer_image%}
                 <td>
                     <img src="{{trainer.trainer_image.url}}"></td>
@@ -38,7 +40,6 @@
                     </td>
                 </td>
                 {%endif%}
-                <td>{{trainer.last_name}}</td>
                 <td>{{trainer.gender}}</td>
                 <td>{{trainer.course_name}}</td>
                 <td>{{trainer.proffession}}</td>
