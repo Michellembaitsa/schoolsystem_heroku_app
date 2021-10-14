@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'embed_video',
     'event',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
 
 
 
@@ -67,8 +67,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'schoolsystem.urls'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
 TEMPLATES = [
     {
@@ -151,26 +154,15 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# location where you will store your static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'schoolsystem/static')
+]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
-django_heroku.settings(locals())
-
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-# STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+django_heroku.settings(locals())
 
 
